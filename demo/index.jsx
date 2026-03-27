@@ -27,6 +27,7 @@ import Contenteditable from './contenteditable';
 import { MobXDemo } from './mobx';
 import Zustand from './zustand';
 import ReduxToolkit from './redux-toolkit';
+import { Analytics } from '@vercel/analytics/react';
 
 let isBenchmark = /(\/spiral|\/pythagoras|[#&]bench)/g.test(
 	window.location.href
@@ -194,4 +195,10 @@ installLogger(
 	String(localStorage.CONSOLE) === 'true' || location.href.match(/console/)
 );
 
-render(<App />, document.body);
+render(
+	<Fragment>
+		<App />
+		<Analytics />
+	</Fragment>,
+	document.body
+);
