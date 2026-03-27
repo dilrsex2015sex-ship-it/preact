@@ -2,6 +2,7 @@ import { render, Component, Fragment } from 'preact';
 // import renderToString from 'preact-render-to-string';
 import './style.scss';
 import { Router, Link } from 'preact-router';
+import { Analytics } from '@vercel/analytics/react';
 import Pythagoras from './pythagoras';
 import Spiral from './spiral';
 import Reorder from './reorder';
@@ -69,6 +70,7 @@ class App extends Component {
 	render({ url }) {
 		return (
 			<div class="app">
+				<Analytics />
 				<header>
 					<nav>
 						<Link href="/" activeClassName="active">
