@@ -1,6 +1,13 @@
 import { NULL, SVG_NAMESPACE } from '../constants';
 import options from '../options';
 
+// Per-instance unique keys for event clock stamps. Each Preact copy on the
+// page gets its own Symbols so that `_dispatched` / `_attached` stamps on
+// shared event objects and handler functions can never collide across
+// instances.
+let EVENT_DISPATCHED = Symbol(),
+	EVENT_ATTACHED = Symbol();
+
 function setStyle(style, key, value) {
 	if (key[0] == '-') {
 		style.setProperty(key, value == NULL ? '' : value);
@@ -74,14 +81,14 @@ export function setProperty(dom, name, value, oldValue, namespace) {
 
 		if (value) {
 			if (!oldValue) {
-				value._attached = eventClock;
+				value[EVENT_ATTACHED] = eventClock;
 				dom.addEventListener(
 					name,
 					useCapture ? eventProxyCapture : eventProxy,
 					useCapture
 				);
 			} else {
-				value._attached = oldValue._attached;
+				value[EVENT_ATTACHED] = oldValue[EVENT_ATTACHED];
 			}
 		} else {
 			dom.removeEventListener(
@@ -150,13 +157,13 @@ function createEventProxy(useCapture) {
 	return function (e) {
 		if (this._listeners) {
 			const eventHandler = this._listeners[e.type + useCapture];
-			if (e._dispatched == NULL) {
-				e._dispatched = eventClock++;
+			if (e[EVENT_DISPATCHED] == NULL) {
+				e[EVENT_DISPATCHED] = eventClock++;
 
-				// When `e._dispatched` is smaller than the time when the targeted event
+				// When `e[EVENT_DISPATCHED]` is smaller than the time when the targeted event
 				// handler was attached we know we have bubbled up to an element that was added
 				// during patching the DOM.
-			} else if (e._dispatched < eventHandler._attached) {
+			} else if (e[EVENT_DISPATCHED] < eventHandler[EVENT_ATTACHED]) {
 				return;
 			}
 			return eventHandler(options.event ? options.event(e) : e);
