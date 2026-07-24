@@ -1,0 +1,391 @@
+# Instincts generated from https://github.com/dilrsex2015sex-ship-it/preact
+# Generated: 2026-07-24T04:32:57.276Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: preact-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/dilrsex2015sex-ship-it/preact
+---
+
+# Preact Commit Length
+
+## Action
+
+Keep commit messages concise (~13 characters)
+
+## Evidence
+
+- Average commit message length: 13 chars
+- Based on 8 commits
+
+---
+id: preact-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/dilrsex2015sex-ship-it/preact
+---
+
+# Preact Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: preact-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/dilrsex2015sex-ship-it/preact
+---
+
+# Preact Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: preact-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/dilrsex2015sex-ship-it/preact
+---
+
+# Preact Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: preact-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/dilrsex2015sex-ship-it/preact
+---
+
+# Preact Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: preact-workflow-diff-module-implementation-update
+trigger: "when doing diff module implementation update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/dilrsex2015sex-ship-it/preact
+---
+
+# Preact Workflow Diff Module Implementation Update
+
+## Action
+
+Follow the diff-module-implementation-update workflow:
+1. Edit one or more files in src/diff/ (such as apply.js, children.js, create.js, index.js, props.js, shared.js)
+2. Optionally update related core files (e.g., src/component.js, src/render.js)
+3. Optionally update or add tests in test/browser/
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/diff/apply.js, src/diff/children.js, src/diff/create.js
+
+---
+id: preact-workflow-feature-development-with-tests
+trigger: "when doing feature development with tests"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/dilrsex2015sex-ship-it/preact
+---
+
+# Preact Workflow Feature Development With Tests
+
+## Action
+
+Follow the feature-development-with-tests workflow:
+1. Edit implementation files (commonly in src/)
+2. Update or add test files in test/browser/ (e.g., render.test.js, keys.test.js)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/component.js, src/render.js, test/browser/render.test.js
+
+---
+id: preact-instinct-file-naming
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct File Naming
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in namingConventions.files
+- Seen in src/diff/apply.js, src/diff/children.js
+
+---
+id: preact-instinct-function-naming
+trigger: "When naming a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in namingConventions.functions
+- Common in src/diff/*.js
+
+---
+id: preact-instinct-class-naming
+trigger: "When naming a class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: preact-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: preact-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle
+- Seen in src/diff/*.js
+
+---
+id: preact-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle
+- Seen in src/diff/*.js
+
+---
+id: preact-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Test Location
+
+## Action
+
+Place browser tests in test/browser/
+
+## Evidence
+
+- Pattern in architecture.testLocation
+- Seen in test/browser/render.test.js, test/browser/keys.test.js
+
+---
+id: preact-instinct-test-update-after-feature
+trigger: "When implementing or modifying a feature"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Test Update After Feature
+
+## Action
+
+Update or add corresponding tests in test/browser/
+
+## Evidence
+
+- feature-development-with-tests workflow
+- Seen in commit sequences updating src/ and test/browser/
+
+---
+id: preact-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Git Commit Format
+
+## Action
+
+Use a concise, imperative statement describing the change (e.g., 'Remove dom code from Children')
+
+## Evidence
+
+- Pattern in commits.examples
+- Average commit message length is 13 characters
+
+---
+id: preact-instinct-diff-module-update
+trigger: "When improving, refactoring, or fixing the diffing algorithm or related logic"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Diff Module Update
+
+## Action
+
+Edit one or more files in src/diff/, optionally update src/component.js or src/render.js, and optionally update/add tests in test/browser/
+
+## Evidence
+
+- diff-module-implementation-update workflow
+- Seen in commit sequences editing src/diff/*.js and test/browser/
+
+---
+id: preact-instinct-feature-with-tests
+trigger: "When implementing or modifying a feature"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Feature With Tests
+
+## Action
+
+Edit implementation files in src/ and update or add test files in test/browser/
+
+## Evidence
+
+- feature-development-with-tests workflow
+- Seen in commit sequences editing src/component.js, src/render.js, and test/browser/*.js
+
+---
+id: preact-instinct-error-boundaries
+trigger: "When handling errors in the application"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: dilrsex2015sex-ship-it/preact
+---
+
+# Preact Instinct Error Boundaries
+
+## Action
+
+Use error boundaries for error handling
+
+## Evidence
+
+- Pattern in errorHandling.errorBoundaries
+- No custom error classes or global handler
+
