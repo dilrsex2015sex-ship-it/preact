@@ -71,6 +71,7 @@ class App extends Component {
 	render({ url }) {
 		return (
 			<div class="app">
+				<Analytics />
 				<header>
 					<nav>
 						<Link href="/" activeClassName="active">
